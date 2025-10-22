@@ -17,9 +17,9 @@ jobs:
       env:
         PAT_TOKEN: ${{ secrets.TEST_REPO_PAT }}
       run: |
-        # Configure git
-        git config user.name "GitHub Actions"
-        git config user.email "github-actions@github.com"
+        # Configure git globally
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "github-actions@github.com"
 
         # Clone test-repo
         git clone https://oauth2:${PAT_TOKEN}@github.com/Ali-ISAA/test-repo.git test-repo-temp
